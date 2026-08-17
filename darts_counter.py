@@ -87,8 +87,8 @@ def AnotherMatch():
         return 1
 
 def main():
-    player1 = Get_Name(player_number = 1)
-    player2 = Get_Name(player_number = 2)
+    player1_name = Get_Name(player_number = 1)
+    player2_name = Get_Name(player_number = 2)
     print()
 
     player1_wins = 0
@@ -96,9 +96,9 @@ def main():
 
     points_game = True
     while (points_game):
-        print(f"{player1}:{player1_wins} - {player2_wins}:{player2}")
+        print(f"{player1_name}:{player1_wins} - {player2_wins}:{player2_name}")
         
-        win = DisplayGame(player1, player2)
+        win = DisplayGame(player1_name, player2_name)
 
         if win == 1:
             player1_wins += 1
