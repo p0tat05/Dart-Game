@@ -24,7 +24,7 @@ def Score(player_name, player_score, current_dart, dart_set):
 
 def SumDiff(initial_score, new_score):
     sum = initial_score - new_score
-    return print(f"sum: {sum}")
+    return print(f"scored: {sum}")
 
 def NegativePointSystem(player_score, player_name, dart, dart_set)-> int:
     if player_score < 0:
