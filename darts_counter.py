@@ -40,7 +40,7 @@ def DartRuleSystem(player_score, player_name, dart, dart_set) -> int:
         player_score -= point_storage
     
     if player_score < 0:
-        player_score += 0
+        player_score += point_storage 
 
     return player_score
 
