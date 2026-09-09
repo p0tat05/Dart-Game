@@ -26,16 +26,31 @@ def SumDiff(initial_score, new_score):
     sum = initial_score - new_score
     return print(f"sum: {sum}")
 
+def NegativePointSystem(player_score, player_name, dart, dart_set)-> int:
+    if player_score < 0:
+        player_score += Score(player_name, player_score, dart, dart_set)
+    else:
+        player_score -= Score(player_name, player_score, dart, dart_set)
+
+    return player_score
+
+def DartRuleSystem(player_score, player_name, dart, dart_set) -> int:
+    if player_score > 0:
+        point_storage = Score(player_name, player_score, dart, dart_set)
+        player_score -= point_storage
+    
+    if player_score < 0:
+        player_score += 0
+
+    return player_score
+
 def DartsThrown(plyr_name, plyr_score):
     dart_set = 3
     initial_score = plyr_score
     print(f"{plyr_name} Score: {plyr_score}")
     for dart in range(dart_set):
-        if plyr_score < 0:
-            plyr_score += Score(plyr_name, plyr_score, dart, dart_set)
-        else:
-            plyr_score -= Score(plyr_name, plyr_score, dart, dart_set)
-             
+
+        plyr_score = DartRuleSystem(plyr_score, plyr_name, dart, dart_set)
 
         if plyr_score == 0:
             SumDiff(initial_score, plyr_score)
@@ -85,6 +100,9 @@ def AnotherMatch():
         return 0
     else:
         return 1
+
+
+
 
 def main():
     player1_name = Get_Name(player_number = 1)
